@@ -37,85 +37,131 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      
+      .role-heading {
+        cursor: pointer;
+        position: relative;
+      }
+      
+      .role-heading:after {
+        content: '▼';
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 10px;
+        color: #4a90e2;
+      }
+      
+      .role-heading.active:after {
+        content: '▲';
+      }
+      
+      .experience-entry {
+        border-left: 3px solid transparent;
+        transition: border-left-color 0.3s ease;
+      }
+      
+      .experience-entry:hover {
+        border-left-color: #4a90e2;
+      }
+    </style>
   </head>
-  <body>
-    <header
-      class="h-screen min-h-[350px] bg-[#212d3e] flex flex-col justify-center relative"
-    >
-      <div class="w-[70%] mx-auto">
-        <h1 class="block font-bold text-5xl text-[#F4F5F7]">
+  <body class="bg-gray-50">
+    <header class="h-screen min-h-[350px] bg-[#212d3e] flex flex-col justify-center relative">
+      <div class="w-[85%] lg:w-[70%] mx-auto">
+        <h1 class="block font-bold text-4xl md:text-5xl text-white">
           naimul hasan
-          <span class="block font-light text-[0.45em] text-[#A7A2A9]"
-            >software engineer</span
-          >
+          <span class="block font-light text-[0.45em] text-gray-300">software engineer</span>
         </h1>
       </div>
     </header>
+    
     <main>
-      <div
-        class="min-h-screen py-[50px] bg-[#F4F7F5] text-[#222222] flex flex-col justify-center"
-      >
-        <div class="w-[70%] mx-auto">
+      <div class="min-h-screen py-[50px] bg-gray-50 text-gray-800">
+        <div class="w-[85%] lg:w-[70%] mx-auto">
           <!-- Introduction section -->
           <div class="mb-12">
             <p class="text-lg mb-1">hey, it's me naimul 👋</p>
             <p class="text-lg mb-8">i like to build things 🏗️</p>
+            <p class="text-gray-600">
+              Software Engineer with experience in Go, Scala, Java, and cloud technologies. Focused on building scalable, reliable systems and optimizing performance. AWS Certified Cloud Practitioner.
+            </p>
           </div>
 
           <!-- Education section -->
           <div class="mb-12">
             <h2 class="text-xl font-bold mb-4">education</h2>
-            <p class="mb-8">
-              bachelor of computer science at
-              <a
-                href="https://www.brandeis.edu/"
-                target="_blank"
-                rel="noreferrer noopener"
-                class="text-[#4a90e2] hover:text-[#357abd] font-medium"
-              >
-                brandeis university
-              </a>
-              <span class="text-gray-500">(2024)</span>
-            </p>
+            <div class="p-4 bg-white rounded-lg shadow-sm">
+              <p class="mb-2">
+                bachelor of computer science at
+                <a
+                  href="https://www.brandeis.edu/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="text-[#4a90e2] hover:text-[#357abd] font-medium"
+                >
+                  brandeis university
+                </a>
+              </p>
+              <p class="text-gray-500 text-sm">Aug 2020 - Dec 2024</p>
+              <p class="mt-2 text-gray-600">Honors: Posse Foundation Full-Tuition Leadership Scholarship, Dean's List</p>
+            </div>
           </div>
 
           <!-- Skills section -->
           <div class="mb-12">
             <h2 class="text-xl font-bold mb-6">skills</h2>
-            <div class="space-y-6">
-              <div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="p-4 bg-white rounded-lg shadow-sm">
                 <h3 class="text-lg font-medium text-[#212d3e] mb-2">
-                  languages
+                  <i class="fa-solid fa-code mr-2 text-[#4a90e2]"></i>programming languages
                 </h3>
                 <p class="text-gray-700">
-                  Go • Scala • Python • JavaScript • TypeScript • SQL • Ruby •
-                  HTML • CSS
+                  Go • Java • Scala • JavaScript • TypeScript • Python • SQL • Bash
                 </p>
               </div>
-              <div>
+              <div class="p-4 bg-white rounded-lg shadow-sm">
                 <h3 class="text-lg font-medium text-[#212d3e] mb-2">
-                  frameworks & libraries
+                  <i class="fa-solid fa-layer-group mr-2 text-[#4a90e2]"></i>frameworks & libraries
                 </h3>
                 <p class="text-gray-700">
-                  Svelte • Angular • Express.js • Node.js • Ruby on Rails •
-                  Tailwind CSS
+                  React.js • React Native • Express.js • Node.js • AngularJS • SpringBoot • Ruby on Rails
                 </p>
               </div>
-              <div>
+              <div class="p-4 bg-white rounded-lg shadow-sm">
                 <h3 class="text-lg font-medium text-[#212d3e] mb-2">
-                  databases & cloud
+                  <i class="fa-solid fa-database mr-2 text-[#4a90e2]"></i>databases & cloud
                 </h3>
                 <p class="text-gray-700">
-                  AWS • MongoDB • MySQL • Google Cloud Platform (GCP)
+                  PostgreSQL • MongoDB • SQLite • AWS • Snowflake • Time-Series Databases
                 </p>
               </div>
-              <div>
+              <div class="p-4 bg-white rounded-lg shadow-sm">
                 <h3 class="text-lg font-medium text-[#212d3e] mb-2">
-                  tools & technologies
+                  <i class="fa-solid fa-toolbox mr-2 text-[#4a90e2]"></i>devops & tools
                 </h3>
                 <p class="text-gray-700">
-                  Docker • Jenkins • Ansible • Git • SVN
+                  Docker • Kubernetes • CI/CD (GitLab, Jenkins, GitHub Actions) • Git • Terraform • Ansible • Linux/Unix
+                </p>
+              </div>
+              <div class="p-4 bg-white rounded-lg shadow-sm md:col-span-2">
+                <h3 class="text-lg font-medium text-[#212d3e] mb-2">
+                  <i class="fa-solid fa-certificate mr-2 text-[#4a90e2]"></i>certifications
+                </h3>
+                <p class="text-gray-700">
+                  AWS Certified Cloud Practitioner (2025)
                 </p>
               </div>
             </div>
@@ -124,11 +170,84 @@
           <!-- Work Experience section -->
           <div class="mb-12">
             <h2 class="text-xl font-bold mb-6">work experience</h2>
-            <div class="mb-8">
+            
+            <!-- Filter System -->
+            <div class="mb-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <button id="filter-all" class="px-3 py-1 bg-[#212d3e] text-white rounded-md text-sm font-medium shadow-sm">All</button>
+                <button id="filter-fullstack" class="px-3 py-1 bg-[#4a90e2] text-white rounded-md text-sm font-medium shadow-sm">Full Stack</button>
+                <button id="filter-frontend" class="px-3 py-1 bg-[#4a90e2] text-white rounded-md text-sm font-medium shadow-sm">Frontend</button>
+                <button id="filter-backend" class="px-3 py-1 bg-[#4a90e2] text-white rounded-md text-sm font-medium shadow-sm">Backend</button>
+                <button id="filter-devops" class="px-3 py-1 bg-[#4a90e2] text-white rounded-md text-sm font-medium shadow-sm">DevOps</button>
+                <button id="filter-sysadmin" class="px-3 py-1 bg-[#4a90e2] text-white rounded-md text-sm font-medium shadow-sm">System Admin</button>
+                <button id="filter-data" class="px-3 py-1 bg-[#4a90e2] text-white rounded-md text-sm font-medium shadow-sm">Data</button>
+              </div>
+              <div class="flex flex-wrap gap-2">  
+                <button id="filter-expand-all" class="px-3 py-1 bg-[#212d3e] text-white rounded-md text-sm font-medium shadow-sm">Expand All</button>
+                <button id="filter-collapse-all" class="px-3 py-1 bg-[#4a90e2] text-white rounded-md text-sm font-medium shadow-sm">Collapse All</button>
+              </div>
+            </div>
+            
+            <!-- UKG (Future Internship) -->
+            <div class="mb-8 experience-entry p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
               <div class="mb-3">
-                <span class="font-medium text-[#212d3e] text-lg"
-                  >full stack engineer</span
+                <span class="font-medium text-[#212d3e] text-lg">software engineer intern</span>
+                at
+                <a
+                  href="https://www.ukg.com/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="text-[#4a90e2] hover:text-[#357abd] font-medium text-lg"
                 >
+                  ultimate kronos group (ukg)
+                </a>
+                <span class="text-gray-500 text-sm">(aug 2024 - dec 2024)</span>
+              </div>
+              <div class="pl-0 mb-3">
+                <p class="text-sm inline-flex items-center px-2 py-1 rounded-full bg-gray-100 text-gray-700">
+                  <i class="fa-solid fa-users mr-2 text-[#4a90e2]"></i>
+                  <span class="text-[#212d3e] italic">Team: Cloud Observability Platform (OBS)</span>
+                </p>
+              </div>
+              
+              <!-- Backend Development -->
+              <div class="pl-4 mb-4" data-role="backend">
+                <h4 class="text-sm font-medium text-[#4a90e2] p-2 bg-gray-50 rounded mb-2 role-heading">Backend Optimization</h4>
+                <div class="pl-4 space-y-2 text-sm leading-relaxed text-gray-700 role-details">
+                  <p>
+                    • Reduced API response times by 99.8% (60s to 100ms) by implementing in-memory caching in Go with expiration policies
+                  </p>
+                  <p>
+                    • Created a proof of concept (PoC) hybrid caching system, utilizing file-based and memory-based caching to improve API response
+                  </p>
+                </div>
+              </div>
+              
+              <!-- Full Stack Development -->
+              <div class="pl-4 mb-4" data-role="full-stack">
+                <h4 class="text-sm font-medium text-[#4a90e2] p-2 bg-gray-50 rounded mb-2 role-heading">Dashboard Development</h4>
+                <div class="pl-4 space-y-2 text-sm leading-relaxed text-gray-700 role-details">
+                  <p>
+                    • Maintained and enhanced a Go, Angular cloud monitoring dashboard by adding new metrics and materialized views
+                  </p>
+                </div>
+              </div>
+              
+              <!-- DevOps -->
+              <div class="pl-4" data-role="devops">
+                <h4 class="text-sm font-medium text-[#4a90e2] p-2 bg-gray-50 rounded mb-2 role-heading">DevOps & Monitoring</h4>
+                <div class="pl-4 space-y-2 text-sm leading-relaxed text-gray-700 role-details">
+                  <p>
+                    • Optimized service logging by developing Python tools for Splunk configuration analysis, reducing redundant log paths by 33%
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Cisco Meraki -->
+            <div class="mb-8 experience-entry p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
+              <div class="mb-3">
+                <span class="font-medium text-[#212d3e] text-lg">software engineer</span>
                 at
                 <a
                   href="https://meraki.cisco.com/"
@@ -140,91 +259,79 @@
                 </a>
                 <span class="text-gray-500 text-sm">(may 2023 - jul 2024)</span>
               </div>
-              <div class="pl-4 space-y-2 text-sm leading-relaxed text-gray-700">
-                <p>
-                  • built a device provisioning platform using
-                  <span class="text-gray-900">Svelte</span> and
-                  <span class="text-gray-900">Go</span>, reducing process time
-                  by over 90% (1 hour to 5 minutes) and accelerating engineer
-                  turnaround time
+              <div class="pl-0 mb-3">
+                <p class="text-sm inline-flex items-center px-2 py-1 rounded-full bg-gray-100 text-gray-700">
+                  <i class="fa-solid fa-users mr-2 text-[#4a90e2]"></i>
+                  <span class="text-[#212d3e] italic">Team: Manufacturing Software (MFGSW)</span>
                 </p>
-
-                <p>
-                  • designed and deployed a
-                  <span class="text-gray-900">Go-based</span> job queue system
-                  with integrated error diagnostics and alerting, enabling
-                  continuous handling of incoming API requests with high
-                  reliability
-                </p>
-
-                <p>
-                  • created high-volume API testing services in
-                  <span class="text-gray-900">Ruby on Rails</span> to generate
-                  randomized requests and track SQL-dependent response times,
-                  leading to a 20% improvement in query efficiency
-                </p>
-
-                <p>
-                  • developed scalable
-                  <span class="text-gray-900">Scala</span> services for device
-                  telemetry (memory usage, flash stats, and power consumption),
-                  ingesting data from over 13M devices into LittleTable for
-                  real-time performance monitoring
-                </p>
-
-                <p>
-                  • improved SQL query performance for telemetry services by
-                  refining query execution plans, reducing average execution
-                  time from 30 seconds to 3-4 seconds
-                </p>
-
-                <p>
-                  • implemented <span class="text-gray-900">Scala</span> coding
-                  standards and introduced comprehensive test cases within the
-                  team, deprecating outdated code to improve code quality,
-                  maintainability, and service performance
-                </p>
+              </div>
+              
+              <!-- Frontend Development -->
+              <div class="pl-4 mb-4" data-role="frontend">
+                <h4 class="text-sm font-medium text-[#4a90e2] p-2 bg-gray-50 rounded mb-2 role-heading">Frontend Development</h4>
+                <div class="pl-4 space-y-2 text-sm leading-relaxed text-gray-700 role-details">
+                  <p>
+                    • Built new Meraki dashboard features, network health monitoring and client warnings using React, React Query, Kafka
+                  </p>
+                  <p>
+                    • Implemented comprehensive unit testing using Jest for React components in Meraki Dashboard, achieving 85%+ test coverage
+                  </p>
+                </div>
+              </div>
+              
+              <!-- Backend Development -->
+              <div class="pl-4 mb-4" data-role="backend">
+                <h4 class="text-sm font-medium text-[#4a90e2] p-2 bg-gray-50 rounded mb-2 role-heading">Backend Development</h4>
+                <div class="pl-4 space-y-2 text-sm leading-relaxed text-gray-700 role-details">
+                  <p>
+                    • Developed device provisioning platform using Go, React, SQLite, reducing manufacturing process time by 90% (90min to 5min)
+                  </p>
+                  <p>
+                    • Engineered Scala/Java telemetry services integrating with time-series databases and Snowflake for real-time analytics of ~3M data points per minute from 14M+ devices
+                  </p>
+                  <p>
+                    • Reduced SQL query execution time by 90% (30s to 3s) through indexing, query optimization, and database tuning
+                  </p>
+                  <p>
+                    • Executed database migrations affecting 27M+ records, ensuring data integrity and optimizing performance
+                  </p>
+                </div>
+              </div>
+              
+              <!-- Data Engineering -->
+              <div class="pl-4 mb-4" data-role="data">
+                <h4 class="text-sm font-medium text-[#4a90e2] p-2 bg-gray-50 rounded mb-2 role-heading">Data Engineering & Performance</h4>
+                <div class="pl-4 space-y-2 text-sm leading-relaxed text-gray-700 role-details">
+                  <p>
+                    • Implemented Scala/Java benchmarks for telemetry services and PostgreSQL query performance, integrating results into Grafana for historical analysis and monitoring
+                  </p>
+                </div>
+              </div>
+              
+              <!-- DevOps -->
+              <div class="pl-4" data-role="devops">
+                <h4 class="text-sm font-medium text-[#4a90e2] p-2 bg-gray-50 rounded mb-2 role-heading">DevOps & Infrastructure</h4>
+                <div class="pl-4 space-y-2 text-sm leading-relaxed text-gray-700 role-details">
+                  <p>
+                    • Implemented CI/CD pipelines with GitLab and Jenkins for Docker firmware image builds, streamlining development workflows
+                  </p>
+                  <p>
+                    • Architected AWS infrastructure with VPC isolation, IAM roles, and security groups, ensuring secure access across environments
+                  </p>
+                  <p>
+                    • Automated JTAG debugging session management with custom shell scripts on Debian-based Raspberry Pi hosts, reducing debugging wait times
+                  </p>
+                  <p>
+                    • Documented Software Development Life Cycle (SDLC) including cloud architecture, system design, and RESTful API diagrams
+                  </p>
+                </div>
               </div>
             </div>
 
-            <div class="mb-8">
+            <!-- UKG Previous Internship -->
+            <div class="mb-8 experience-entry p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
               <div class="mb-3">
-                <span class="font-medium text-[#212d3e] text-lg"
-                  >software developer</span
-                >
-                at
-                <a
-                  href="https://www.enactnetwork.org/"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  class="text-[#4a90e2] hover:text-[#357abd] font-medium text-lg"
-                >
-                  enact network
-                </a>
-              </div>
-              <div class="pl-4 space-y-2 text-sm leading-relaxed text-gray-700">
-                <p>
-                  • maintained a full-stack application using MongoDB and
-                  Express.js, connecting over 200 students from 70 different US
-                  universities.
-                </p>
-                <p>
-                  • implemented email notifications for events using SMTP and
-                  SendGrid, enhancing user engagement with timely alerts.
-                </p>
-                <p>
-                  • developed and deployed Docker containers for local
-                  development, reducing initial setup time from 1 hour to under
-                  30 minutes—a 40% decrease in developer setup time.
-                </p>
-              </div>
-            </div>
-
-            <div class="mb-8">
-              <div class="mb-3">
-                <span class="font-medium text-[#212d3e] text-lg"
-                  >software developer</span
-                >
+                <span class="font-medium text-[#212d3e] text-lg">software engineer intern</span>
                 at
                 <a
                   href="https://www.ukg.com/"
@@ -234,65 +341,92 @@
                 >
                   ukg
                 </a>
-                <span class="text-gray-500 text-sm">(sep 2022 - dec 2022)</span>
+                <span class="text-gray-500 text-sm">(aug 2022 - dec 2022)</span>
               </div>
-              <div class="pl-4 space-y-2 text-sm leading-relaxed text-gray-700">
-                <p>
-                  • developed a new dashboard in Angular and Go to enable Tech
-                  Leads to claim and update Google Cloud Platform (GCP)
-                  Projects, reducing the Observability Team's manual tracking
-                  workload
+              <div class="pl-0 mb-3">
+                <p class="text-sm inline-flex items-center px-2 py-1 rounded-full bg-gray-100 text-gray-700">
+                  <i class="fa-solid fa-users mr-2 text-[#4a90e2]"></i>
+                  <span class="text-[#212d3e] italic">Team: Observability Platform</span>
                 </p>
-
-                <p>
-                  • deployed new Go backend APIs to modernize legacy APIs from
-                  Ultimate Software and Kronos Incorporated, restructuring
-                  deprecated code to improve scalability and maintainability
-                </p>
-
-                <p>
-                  • optimized Windows development setup by creating step-by-step
-                  documentation and configuring WSL with Docker containers,
-                  significantly reducing setup time for new developers
-                </p>
+              </div>
+              
+              <!-- Full Stack Development -->
+              <div class="pl-4 mb-4" data-role="full-stack">
+                <h4 class="text-sm font-medium text-[#4a90e2] p-2 bg-gray-50 rounded mb-2 role-heading">Full Stack Development</h4>
+                <div class="pl-4 space-y-2 text-sm leading-relaxed text-gray-700 role-details">
+                  <p>
+                    • Developed dashboard in Angular and Go for teams to manage Google Cloud Platform projects, reducing unused resources
+                  </p>
+                  <p>
+                    • Deployed modern Go REST APIs to enhance scalability and maintainability of legacy APIs, deprecating legacy endpoints
+                  </p>
+                </div>
+              </div>
+              
+              <!-- Developer Experience -->
+              <div class="pl-4" data-role="devops">
+                <h4 class="text-sm font-medium text-[#4a90e2] p-2 bg-gray-50 rounded mb-2 role-heading">Developer Experience</h4>
+                <div class="pl-4 space-y-2 text-sm leading-relaxed text-gray-700 role-details">
+                  <p>
+                    • Optimized Windows development setup by creating step-by-step documentation and configuring WSL with Docker containers, significantly reducing setup time for new developers
+                  </p>
+                </div>
               </div>
             </div>
 
-            <div class="mb-8">
+            <!-- Enact Network -->
+            <div class="mb-8 experience-entry p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
               <div class="mb-3">
-                <span class="font-medium text-[#212d3e] text-lg"
-                  >system administrator</span
-                >
+                <span class="font-medium text-[#212d3e] text-lg">software engineer</span>
                 at
                 <a
-                  href="https://evernote.com/"
+                  href="https://www.enactnetwork.org/"
                   target="_blank"
                   rel="noreferrer noopener"
                   class="text-[#4a90e2] hover:text-[#357abd] font-medium text-lg"
                 >
-                  evernote
+                  enact network
                 </a>
-                <span class="text-gray-500 text-sm">(may 2022 - jul 2022)</span>
+                <span class="text-gray-500 text-sm">(aug 2022 - may 2023)</span>
               </div>
-              <div class="pl-4 space-y-2 text-sm leading-relaxed text-gray-700">
-                <p>
-                  • optimized ticket routing by reducing zendesk tech debt by
-                  45%
+              <div class="pl-0 mb-3">
+                <p class="text-sm inline-flex items-center px-2 py-1 rounded-full bg-gray-100 text-gray-700">
+                  <i class="fa-solid fa-users mr-2 text-[#4a90e2]"></i>
+                  <span class="text-[#212d3e] italic">Team: Core Web Platform</span>
                 </p>
-
-                <p>
-                  • built node api connector for zendesk trigger usage tracking
-                </p>
-
-                <p>• improved system administrator dashboards and reporting</p>
+              </div>
+              
+              <!-- Full Stack Development -->
+              <div class="pl-4 mb-4" data-role="full-stack">
+                <h4 class="text-sm font-medium text-[#4a90e2] p-2 bg-gray-50 rounded mb-2 role-heading">Full Stack Development</h4>
+                <div class="pl-4 space-y-2 text-sm leading-relaxed text-gray-700 role-details">
+                  <p>
+                    • Connected 200+ students across 70 US universities through full-stack application development using MongoDB and Express.js
+                  </p>
+                  <p>
+                    • Built RESTful API endpoints for user authentication, profile management, and event notifications
+                  </p>
+                  <p>
+                    • Enhanced user engagement by implementing email notifications for events using SMTP and SendGrid
+                  </p>
+                </div>
+              </div>
+              
+              <!-- DevOps -->
+              <div class="pl-4" data-role="devops">
+                <h4 class="text-sm font-medium text-[#4a90e2] p-2 bg-gray-50 rounded mb-2 role-heading">DevOps</h4>
+                <div class="pl-4 space-y-2 text-sm leading-relaxed text-gray-700 role-details">
+                  <p>
+                    • Reduced development setup time by 40% through implementation of Docker-based local development environment
+                  </p>
+                </div>
               </div>
             </div>
 
-            <div class="mb-8">
+            <!-- Brandeis University - DevOps -->
+            <div class="mb-8 experience-entry p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
               <div class="mb-3">
-                <span class="font-medium text-[#212d3e] text-lg"
-                  >junior systems administrator</span
-                >
+                <span class="font-medium text-[#212d3e] text-lg">junior devops engineer</span>
                 at
                 <a
                   href="https://www.brandeis.edu/"
@@ -304,111 +438,333 @@
                 </a>
                 <span class="text-gray-500 text-sm">(feb 2021 - may 2022)</span>
               </div>
-              <div class="pl-4 space-y-2 text-sm leading-relaxed text-gray-700">
-                <p>• improved redhat server setup through ansible automation</p>
-
-                <p>
-                  • developed network security scripts using firewalld and
-                  fail2ban
+              <div class="pl-0 mb-3">
+                <p class="text-sm inline-flex items-center px-2 py-1 rounded-full bg-gray-100 text-gray-700">
+                  <i class="fa-solid fa-users mr-2 text-[#4a90e2]"></i>
+                  <span class="text-[#212d3e] italic">Team: Michtom School of Computer Science Guru</span>
                 </p>
-
-                <p>• managed complex network and framework troubleshooting</p>
+              </div>
+              
+              <!-- System Administration -->
+              <div class="pl-4 mb-4" data-role="system-admin">
+                <h4 class="text-sm font-medium text-[#4a90e2] p-2 bg-gray-50 rounded mb-2 role-heading">System Administration</h4>
+                <div class="pl-4 space-y-2 text-sm leading-relaxed text-gray-700 role-details">
+                  <p>
+                    • Automated OS deployments using Kickstart for RHEL/Ubuntu/Debian, ensuring consistent and minimal installations
+                  </p>
+                  <p>
+                    • Streamlined RedHat/Ubuntu server setup and maintenance using Ansible, cutting provisioning time from 2+ hours to 30 minutes
+                  </p>
+                  <p>
+                    • Configured and deployed PhD students' research applications and professors' custom-built software on AWS EC2 instances
+                  </p>
+                  <p>
+                    • Optimized system performance and security by stripping unnecessary default packages, reducing resource usage
+                  </p>
+                </div>
+              </div>
+              
+              <!-- Network Security -->
+              <div class="pl-4 mb-4" data-role="system-admin">
+                <h4 class="text-sm font-medium text-[#4a90e2] p-2 bg-gray-50 rounded mb-2 role-heading">Network Security & Monitoring</h4>
+                <div class="pl-4 space-y-2 text-sm leading-relaxed text-gray-700 role-details">
+                  <p>
+                    • Developed firewall automation scripts with Firewalld and Fail2ban to dynamically redirect unknown connections
+                  </p>
+                  <p>
+                    • Developed Nagios plugins to track server uptime, enabling a protocol to schedule reboots after uptime threshold, ensuring optimal server performance
+                  </p>
+                </div>
               </div>
             </div>
 
-            <div class="mb-8">
+            <!-- Brandeis University - Software Engineer -->
+            <div class="mb-8 experience-entry p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200">
               <div class="mb-3">
-                <span class="font-medium text-[#212d3e] text-lg"
-                  >software developer</span
-                >
+                <span class="font-medium text-[#212d3e] text-lg">software engineer</span>
                 at
                 <a
+                  href="https://www.brandeis.edu/"
                   target="_blank"
                   rel="noreferrer noopener"
                   class="text-[#4a90e2] hover:text-[#357abd] font-medium text-lg"
                 >
-                  mccoy group
+                  brandeis university
                 </a>
-                <span class="text-gray-500 text-sm">(jun 2020 - aug 2020)</span>
+                <span class="text-gray-500 text-sm">(aug 2020 - may 2021)</span>
               </div>
-              <div class="pl-4 space-y-2 text-sm leading-relaxed text-gray-700">
-                <p>
-                  • designed and created company's first website using figma,
-                  mysql, and php
+              <div class="pl-0 mb-3">
+                <p class="text-sm inline-flex items-center px-2 py-1 rounded-full bg-gray-100 text-gray-700">
+                  <i class="fa-solid fa-users mr-2 text-[#4a90e2]"></i>
+                  <span class="text-[#212d3e] italic">Team: Media Technology Services (MTS)</span>
                 </p>
-                <p>
-                  • researched and a created database resulting in $100K in
-                  potential grants to support and help fund the organization
-                </p>
+              </div>
+              
+              <!-- Automation -->
+              <div class="pl-4" data-role="backend">
+                <h4 class="text-sm font-medium text-[#4a90e2] p-2 bg-gray-50 rounded mb-2 role-heading">Automation & Tools</h4>
+                <div class="pl-4 space-y-2 text-sm leading-relaxed text-gray-700 role-details">
+                  <p>
+                    • Developed an application to download and sync over 5TB of Zoom recordings to on-premises servers, significantly reducing manual backup time and error rates
+                  </p>
+                  <p>
+                    • Automated Zoom setup in 70+ classrooms using Selenium, reducing recurring technical issues during hybrid meetings
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projects section -->
+          <div class="mb-12">
+            <h2 class="text-xl font-bold mb-6">projects</h2>
+            
+            <!-- LightWatch -->
+            <div class="mb-8 p-4 bg-white rounded-lg shadow-sm">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+                <h3 class="text-lg font-medium text-[#212d3e]">Enact Network</h3>
+                <div class="mt-2 md:mt-0">
+                  <a href="https://lightwatch.archiix.dev" class="text-[#4a90e2] hover:text-[#357abd] text-sm font-medium hover:underline">
+                    <i class="fa-solid fa-code mr-1"></i> Site
+                  </a>
+                </div>
+              </div>
+              <div class="mb-3">
+                <p class="text-sm text-gray-500">React/Next.js • Go • SQLite • WebSocket • Docker • Cloudflare</p>
+              </div>
+              <div class="space-y-2 text-sm leading-relaxed text-gray-700">
+                <p>• Designed and developed a lightweight monitoring solution with a responsive React dashboard, with real-time infrastructure metrics</p>
+                <p>• Develop light weight agent capable of collecting cpu, memory, disk, and network data</p>
+                <p>• Built data aggregators in Golang to efficiently collect, and store time-series metrics in SQLite, for minimal resource consumption</p>
+                <p>• Streamlined development workflow with Docker containerization, enabling consistent testing across the full technology stack from Golang backend services to React frontend components</p>
+
               </div>
             </div>
 
-            <div class="mb-8">
-              <div class="mb-3">
-                <span class="font-medium text-[#212d3e] text-lg"
-                  >software engineer intern</span
-                >
-                at
-                <a
-                  href="https://nyulangone.org/"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  class="text-[#4a90e2] hover:text-[#357abd] font-medium text-lg"
-                >
-                  nyu langone health
-                </a>
-                <span class="text-gray-500 text-sm">(nov 2019 - mar 2020)</span>
+            <!-- Enact Network Project -->
+            <div class="mb-8 p-4 bg-white rounded-lg shadow-sm">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+                <h3 class="text-lg font-medium text-[#212d3e]">Enact Network</h3>
+                <div class="mt-2 md:mt-0">
+                  <a href="https://github.com/ENACTadmin/ENACT" class="text-[#4a90e2] hover:text-[#357abd] text-sm font-medium hover:underline">
+                    <i class="fa-solid fa-code mr-1"></i> Source Code
+                  </a>
+                </div>
               </div>
-              <div class="pl-4 space-y-2 text-sm leading-relaxed text-gray-700">
-                <p>• developed vr applications for medical education</p>
-
-                <p>
-                  • created python tools for processing student test results
-                </p>
+              <div class="mb-3">
+                <p class="text-sm text-gray-500">Express.js • Node.js • MongoDB • Docker • SMTP • SendGrid</p>
+              </div>
+              <div class="space-y-2 text-sm leading-relaxed text-gray-700">
+                <p><p>•  Connected 200+ students across 70 US universities through full-stack application development using MongoDB and Express.js</p></p>
+                <p>• Implemented Docker-based local development environment reducing setup time by 40%</p>
+                <p>• Built RESTful API endpoints for user authentication, profile management, and event notifications</p>
+              </div>
+            </div>
+            
+            <!-- Campus Rover Project -->
+            <div class="mb-8 p-4 bg-white rounded-lg shadow-sm">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+                <h3 class="text-lg font-medium text-[#212d3e]">Campus Rover - Command & Control Dashboard</h3>
+                <div class="mt-2 md:mt-0">
+                  <a href="https://github.com/naimulh247/command-and-control-dashboard" class="text-[#4a90e2] hover:text-[#357abd] text-sm font-medium hover:underline">
+                    <i class="fa-solid fa-code mr-1"></i> Source Code
+                  </a>
+                </div>
+              </div>
+              <div class="mb-3">
+                <p class="text-sm text-gray-500">React • ROS • rosbridge • JavaScript • WebSockets • Python • Progressive Web App (PWA)</p>
+              </div>
+              <div class="space-y-2 text-sm leading-relaxed text-gray-700">
+                <p>• Developed a React web application for real-time teleoperation, live camera feed, GPS mapping, and robot metrics, enabling remote control of campus rovers</p>
+                <p>• Implemented WebSocket connections to stream real-time data from ROS-powered robots to the web interface</p>
+                <p>• Created a responsive design that works across desktop and mobile devices as a Progressive Web App</p>
               </div>
             </div>
           </div>
 
           <!-- Contact section -->
           <div class="mb-12">
-            <h2 class="text-xl font-bold mb-4">me</h2>
-            <ul class="space-y-2 mb-8">
-              <li>
-                <span class="text-gray-500 mr-2"><i class="fa-brands fa-linkedin"></i></span>
-                <a
-                  href="https://www.linkedin.com/in/naimul-hasan"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  class="text-[#4a90e2] hover:text-[#357abd]"
-                >
-                  linkedin
-                </a>
-              </li>
-              <li>
-                <span class="text-gray-500 mr-2"><i class="fa-brands fa-github"></i></span>
-                <a
-                  href="https://github.com/naimulh247"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  class="text-[#4a90e2] hover:text-[#357abd]"
-                >
-                  github
-                </a>
-              </li>
-              <li>
-                <span class="text-gray-500 mr-2"><i class="fa-regular fa-envelope"></i></span>
-                email me at
-                <a
-                  href="mailto:naimulhasan@brandeis.edu"
-                  class="text-[#4a90e2] hover:text-[#357abd]"
-                >
-                  naimulhasan@brandeis.edu
-                </a>
-              </li>
-            </ul>
+            <h2 class="text-xl font-bold mb-6">me</h2>
+            <div class="p-4 bg-white rounded-lg shadow-sm">
+              <ul class="space-y-3">
+                <li class="flex items-center">
+                  <span class="text-[#4a90e2] mr-3 w-6 text-center"><i class="fa-brands fa-linkedin"></i></span>
+                  <a
+                    href="https://www.linkedin.com/in/naimul-hasan"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    class="text-[#4a90e2] hover:text-[#357abd] hover:underline"
+                  >
+                    linkedin.com/in/naimul-hasan
+                  </a>
+                </li>
+                <li class="flex items-center">
+                  <span class="text-[#4a90e2] mr-3 w-6 text-center"><i class="fa-brands fa-github"></i></span>
+                  <a
+                    href="https://github.com/naimulh247"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    class="text-[#4a90e2] hover:text-[#357abd] hover:underline"
+                  >
+                    github.com/naimulh247
+                  </a>
+                </li>
+                
+                <li class="flex items-center">
+                  <span class="text-[#4a90e2] mr-3 w-6 text-center"><i class="fa-regular fa-envelope"></i></span>
+                  <a
+                    href="mailto:naimulhasan@brandeis.edu"
+                    class="text-[#4a90e2] hover:text-[#357abd] hover:underline"
+                  >
+                    naimulhasan@brandeis.edu
+                  </a>
+                </li>
+                <!-- <li class="flex items-center">
+                  <span class="text-[#4a90e2] mr-3 w-6 text-center"><i class="fa-solid fa-location-dot"></i></span>
+                  <span class="text-gray-700">Boston, MA</span>
+                </li> -->
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </main>
+
+    <!-- JavaScript for filtering functionality -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Get all filter buttons
+        const filterAll = document.getElementById('filter-all');
+        const filterFullstack = document.getElementById('filter-fullstack');
+        const filterFrontend = document.getElementById('filter-frontend');
+        const filterBackend = document.getElementById('filter-backend');
+        const filterDevops = document.getElementById('filter-devops');
+        const filterSysadmin = document.getElementById('filter-sysadmin');
+        const filterData = document.getElementById('filter-data');
+        const filterExpandAll = document.getElementById('filter-expand-all');
+        const filterCollapseAll = document.getElementById('filter-collapse-all');
+        
+        // Get all role sections
+        const roleSections = document.querySelectorAll('[data-role]');
+        
+        // Initially, show all sections
+        function showAll() {
+          // Reset all buttons to default color
+          document.querySelectorAll('.flex.flex-wrap.gap-2 button').forEach(btn => {
+            if (!btn.id.includes('expand') && !btn.id.includes('collapse')) {
+              btn.classList.remove('bg-[#212d3e]');
+              btn.classList.add('bg-[#4a90e2]');
+            }
+          });
+          
+          // Set "All" button to active color
+          filterAll.classList.remove('bg-[#4a90e2]');
+          filterAll.classList.add('bg-[#212d3e]');
+          
+          // Show all experience entries
+          document.querySelectorAll('.experience-entry').forEach(entry => {
+            entry.style.display = 'block';
+          });
+        }
+        
+        // Function to filter by role
+        function filterByRole(role) {
+          // Reset all buttons to default color
+          document.querySelectorAll('.flex.flex-wrap.gap-2 button').forEach(btn => {
+            if (!btn.id.includes('expand') && !btn.id.includes('collapse')) {
+              btn.classList.remove('bg-[#212d3e]');
+              btn.classList.add('bg-[#4a90e2]');
+            }
+          });
+          
+          // Set clicked button to active color
+          event.target.classList.remove('bg-[#4a90e2]');
+          event.target.classList.add('bg-[#212d3e]');
+          
+          // Hide all experience entries first
+          document.querySelectorAll('.experience-entry').forEach(entry => {
+            entry.style.display = 'none';
+          });
+          
+          // Show only entries that match the filter
+          if (role === 'fullstack') {
+            document.querySelectorAll('[data-role="full-stack"], [data-role="frontend"], [data-role="backend"]').forEach(section => {
+              let entry = section.closest('.experience-entry');
+              if (entry) entry.style.display = 'block';
+            });
+          } else {
+            document.querySelectorAll(`[data-role="${role}"]`).forEach(section => {
+              let entry = section.closest('.experience-entry');
+              if (entry) entry.style.display = 'block';
+            });
+          }
+        }
+        
+        // Function to expand all role sections
+        function expandAll() {
+          document.querySelectorAll('.role-details').forEach(section => {
+            section.style.display = 'block';
+          });
+          
+          // Add active class to headings
+          document.querySelectorAll('.role-heading').forEach(heading => {
+            heading.classList.add('active');
+          });
+          
+          // Update active state for expand/collapse buttons
+          filterExpandAll.classList.remove('bg-[#4a90e2]');
+          filterExpandAll.classList.add('bg-[#212d3e]');
+          filterCollapseAll.classList.remove('bg-[#212d3e]');
+          filterCollapseAll.classList.add('bg-[#4a90e2]');
+        }
+        
+        // Function to collapse all role sections
+        function collapseAll() {
+          document.querySelectorAll('.role-details').forEach(section => {
+            section.style.display = 'none';
+          });
+          
+          // Remove active class from headings
+          document.querySelectorAll('.role-heading').forEach(heading => {
+            heading.classList.remove('active');
+          });
+          
+          // Update active state for expand/collapse buttons
+          filterCollapseAll.classList.remove('bg-[#4a90e2]');
+          filterCollapseAll.classList.add('bg-[#212d3e]');
+          filterExpandAll.classList.remove('bg-[#212d3e]');
+          filterExpandAll.classList.add('bg-[#4a90e2]');
+        }
+        
+        // Add click event listeners to filter buttons
+        filterAll.addEventListener('click', function(e) { showAll(); });
+        filterFullstack.addEventListener('click', function(e) { filterByRole('fullstack'); });
+        filterFrontend.addEventListener('click', function(e) { filterByRole('frontend'); });
+        filterBackend.addEventListener('click', function(e) { filterByRole('backend'); });
+        filterDevops.addEventListener('click', function(e) { filterByRole('devops'); });
+        filterSysadmin.addEventListener('click', function(e) { filterByRole('system-admin'); });
+        filterData.addEventListener('click', function(e) { filterByRole('data'); });
+        filterExpandAll.addEventListener('click', expandAll);
+        filterCollapseAll.addEventListener('click', collapseAll);
+        
+        // Initialize with all sections expanded
+        expandAll();
+        showAll();
+        
+        // Make role headings clickable to toggle their sections
+        document.querySelectorAll('.role-heading').forEach(heading => {
+          heading.addEventListener('click', function() {
+            this.classList.toggle('active');
+            const details = this.nextElementSibling;
+            
+            if (details.style.display === 'none' || details.style.display === '') {
+              details.style.display = 'block';
+            } else {
+              details.style.display = 'none';
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
